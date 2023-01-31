@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2 style="margin-top: 20px; text-align: center;">Update Movie</h2>
+<div class="add" style="margin-top: 20px;">
+    <form id="update" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+    </form>
+    <button form="update" class="input" type="submit">Update Movie</button>
+    <a class="input" href="{% url 'movieapp:details' movie.id %}" ><button>Cancel</button></a>
+</div>
+
+{% endblock %}

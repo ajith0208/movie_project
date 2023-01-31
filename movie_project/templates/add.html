@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2 style="margin-top: 20px; text-align: center;">Add new Movie</h2>
+<div class="add">
+<form id='add_movie' action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label class="label" for="">Movie Name : </label>
+    <input type="text" name="name" placeholder="Favorite movie" ><br>
+    <label class="label" for="">Released Year : </label>
+    <input type="text" name="year" placeholder="Year of Movie"><br>
+    <label class="label" for="">Director Name : </label>
+    <input type="text" name="director" placeholder="Director of movie"><br>
+    <label class="label" for="">Image : </label>
+    <input  type="file" name="img" placeholder="Favorite movie"><br>
+    
+</form>
+<button form="add_movie" class="input" type="submit">Add Movie</button>
+<a href="{% url 'movieapp:index' %}"><button>Cancel</button></a>
+</div>
+
+{% endblock %}

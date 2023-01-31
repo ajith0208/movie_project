@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+<div style="text-align: center; padding-top: 30px;">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h3>Do you want to delete {{ movie.name}}?</h3>
+        <input type="submit" class="btn btn-warning" value="Yes">
+        <a class="btn btn-info" href="{% url 'movieapp:details' movie.id %}" >No</a>
+    </form>
+</div>
+
+{% endblock %}
